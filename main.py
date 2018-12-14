@@ -1,4 +1,3 @@
-# -*- coding: unicode -*-
 from gods import *
 from worlds import *
 
@@ -14,16 +13,20 @@ listOfWorlds = list(worldsHash.keys())
 
 def gods( q , mode):
         if( mode == 0):
-                botSpeak("modo geral")
+                botSpeak("A Mitologia Nórdica possui muitos deuses interessantes e você pode conferir detalhes sobre alguns deles aqui.")
+                print("São eles: " , end="\n")
+                for god in listOfGods:
+                        print("\t" + god + " ")
         elif( mode == 1):
-                botSpeak("modo especifico")
-                print( ">>>>>>>>>>>> " + q.upper() + " <<<<<<<<<<<<")
+                print("\n\n")
+                botSpeak( "\t>>>>>>>>>>>> " + q.upper() + " <<<<<<<<<<<<\n")
 
                 for quote in godsHash[q]:
-                        print( quote )
+                        botSpeak( quote )
                         botSpeak("Deseja saber mais sobre?")
                         zin = input(" -??? ")
                         if( zin == "nao" or zin == "n"):
+                                botSpeak("okay")
                                 break
                         
 
@@ -35,7 +38,7 @@ def welcomeMessage():
     print(" ->>> Bem-Vindo, diga-nos sobre o que você quer saber?")
 
 def botSpeak( message ):
-        print(" ->>> " + message)
+        print(" ->>> " + message + "\n")
 
 if( __name__ == "__main__"):
         welcomeMessage()
@@ -55,7 +58,8 @@ if( __name__ == "__main__"):
                 elif( question == "sair"):
                         break
                 else:
-                        botSpeak("Desculpe, não entendi.")
+                        print("")
+                        botSpeak("Desculpe, não entendi, mas se estiver afim de saber mais sobre deuses, mundos ou lendas da mitologia nórdica fique a vontade.")
 
                 
                 
