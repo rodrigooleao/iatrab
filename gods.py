@@ -16,4 +16,10 @@ def readGodsFile():
 
 
 if( __name__ == "__main__"):
-    readGodsFile()
+    godsHash = readGodsFile()
+
+    for god in godsHash:
+        print( "God: " + god + "\n\n" )
+        for quote in godsHash[god]:
+            print(quote + "\n")
+        print("\n")
