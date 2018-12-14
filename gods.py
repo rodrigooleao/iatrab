@@ -11,7 +11,9 @@ def readGodsFile():
             godsList.append( line )
             godsHash[line[0]] = line[1:]
 
-    print( godsHash)
+    return godsHash
+
+
 
 if( __name__ == "__main__"):
     readGodsFile()
